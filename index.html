@@ -18,10 +18,9 @@
             background-color: #FFFFFF;
         }
         .hero-image {
-            background-image: url('Images/Maddie.png');
+            background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80');
             background-size: cover;
             background-position: center;
-            background-color: #FC221C;
         }
         .nav-link {
             position: relative;
@@ -50,40 +49,48 @@
             color: #FC221C;
         }
         .portfolio-item {
-            background-color: #FFFFFF;
-        }
-        .text-stroke {
-            -webkit-text-stroke: 1px white;
-            paint-order: stroke fill;
-        }
-        .blur-nav {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: #F8DFDB;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <!-- Navigation - Centered with blur -->
-    <nav class="fixed w-full top-0 z-50 blur-nav bg-transparent py-4 px-6">
-        <div class="container mx-auto flex justify-center items-center">
-            <div class="flex space-x-8">
+    <!-- Navigation -->
+    <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
+            <div class="hidden md:flex space-x-8">
                 <a href="#" class="nav-link active text-[#40140F] font-medium">Home</a>
                 <a href="#portfolio" class="nav-link text-[#40140F] font-medium">Portfolio</a>
                 <a href="#contact" class="nav-link text-[#40140F] font-medium">Contact</a>
             </div>
+            <button class="md:hidden text-[#40140F]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="md:hidden bg-[#F8DFDB] hidden" id="mobileMenu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#" class="block px-3 py-2 text-[#40140F] font-medium">Home</a>
+            <a href="#portfolio" class="block px-3 py-2 text-[#40140F] font-medium">Portfolio</a>
+            <a href="#contact" class="block px-3 py-2 text-[#40140F] font-medium">Contact</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero-image flex-grow flex items-center justify-center relative pt-16">
+    <section class="hero-image flex-grow flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
         <div class="container mx-auto text-center relative z-10 px-4">
-            <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6 text-stroke">MADELEINE MULLER</h1>
-            <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto text-stroke">Welcome to my personal portfolio</p>
+            <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6">MADELEINE MULLER</h1>
+            <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Welcome to my personal portfolio</p>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-[#F8DFDB]">
+    <section id="portfolio" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="climate-crisis text-4xl text-center mb-12">PORTFOLIO</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -114,10 +121,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-[#F8DFDB]">
         <div class="container mx-auto px-4">
             <h2 class="climate-crisis text-4xl text-center mb-12">CONTACT ME</h2>
-            <div class="max-w-2xl mx-auto bg-[#F8DFDB] rounded-lg shadow-lg p-8">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
                 <div class="space-y-6">
                     <div class="flex items-center">
                         <div class="contact-icon text-2xl text-[#40140F] mr-4">
@@ -162,13 +169,30 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#F8DFDB] py-8">
+    <footer class="bg-white py-8">
         <div class="container mx-auto px-4 text-center">
             <p class="text-[#40140F]">&copy; 2023 Madeleine Muller. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+        // Update active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Hide mobile menu after selection
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.add('hidden');
+            });
+        });
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -177,15 +201,6 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-            });
-        });
-        
-        // Update active nav link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
             });
         });
     </script>
