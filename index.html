@@ -21,6 +21,22 @@
             background-image: url('Images/Maddie.png');
             background-size: cover;
             background-position: center;
+            height: 100vh; /* Make hero full screen */
+            position: relative;
+        }
+        .hero-text {
+            position: absolute;
+            z-index: 0; /* Text behind the image for depth */
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
         }
         .nav-link {
             position: relative;
@@ -55,7 +71,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Navigation -->
-    <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
+    <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
             <div class="hidden md:flex space-x-8">
@@ -81,35 +97,41 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero-image flex-grow flex items-center justify-center relative">
-        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div class="container mx-auto text-center relative z-10 px-4">
+    <section class="hero-image flex items-center justify-center relative">
+        <!-- Text behind for depth -->
+        <div class="hero-text">
+            <h1 class="climate-crisis text-9xl md:text-[15rem] lg:text-[20rem] text-white opacity-20">MADELEINE</h1>
+        </div>
+        <!-- Overlay for better visibility -->
+        <div class="overlay"></div>
+        <!-- Content on top -->
+        <div class="container mx-auto text-center content px-4">
             <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6">MADELEINE MULLER</h1>
             <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Welcome to my personal portfolio</p>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-white">
+    <!-- Portfolio Section - Now with F8DFDB background (swapped) -->
+    <section id="portfolio" class="py-20 bg-[#F8DFDB]">
         <div class="container mx-auto px-4">
             <h2 class="climate-crisis text-4xl text-center mb-12">PORTFOLIO</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio items would go here -->
-                <div class="portfolio-item rounded-lg p-6 shadow-lg">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg bg-white">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
                     <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
                     <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
                 </div>
-                <div class="portfolio-item rounded-lg p-6 shadow-lg">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg bg-white">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
                     <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
                     <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
                 </div>
-                <div class="portfolio-item rounded-lg p-6 shadow-lg">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg bg-white">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
@@ -120,11 +142,11 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-[#F8DFDB]">
+    <!-- Contact Section - Now with white background (swapped) -->
+    <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="climate-crisis text-4xl text-center mb-12">CONTACT ME</h2>
-            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <div class="max-w-2xl mx-auto bg-[#F8DFDB] rounded-lg shadow-lg p-8">
                 <div class="space-y-6">
                     <div class="flex items-center">
                         <div class="contact-icon text-2xl text-[#40140F] mr-4">
@@ -168,10 +190,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white py-8">
+    <!-- Footer - Now matching portfolio section color -->
+    <footer class="bg-[#F8DFDB] py-8">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-[#40140F]">&copy; 2023 Madeleine Muller. All rights reserved.</p>
+            <p class="text-[#40140F]">&copy; 2025 Madeleine Muller. All rights reserved.</p>
         </div>
     </footer>
 
@@ -204,5 +226,5 @@
             });
         });
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=mlmPenguin/portfolio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</body>
 </html>
