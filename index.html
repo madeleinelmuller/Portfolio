@@ -17,26 +17,41 @@
             font-family: 'Archivo', sans-serif;
             background-color: #FFFFFF;
         }
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
         .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('Images/Maddie.png');
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Make hero full screen */
-            position: relative;
-        }
-        .hero-text {
-            position: absolute;
-            z-index: 0; /* Text behind the image for depth */
-        }
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
-        .content {
+        .hero-content {
             position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             z-index: 2;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FC221C;
+            opacity: 0.2;
+            z-index: 1;
         }
         .nav-link {
             position: relative;
@@ -65,13 +80,13 @@
             color: #FC221C;
         }
         .portfolio-item {
-            background-color: #F8DFDB;
+            background-color: #FFFFFF;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Navigation -->
-    <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md sticky top-0 z-50">
+    <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
             <div class="hidden md:flex space-x-8">
@@ -97,41 +112,38 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero-image flex items-center justify-center relative">
-        <!-- Text behind for depth -->
-        <div class="hero-text">
-            <h1 class="climate-crisis text-9xl md:text-[15rem] lg:text-[20rem] text-white opacity-20">MADELEINE</h1>
-        </div>
-        <!-- Overlay for better visibility -->
-        <div class="overlay"></div>
-        <!-- Content on top -->
-        <div class="container mx-auto text-center content px-4">
-            <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6">MADELEINE MULLER</h1>
-            <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Welcome to my personal portfolio</p>
+    <section class="hero-section flex-grow">
+        <div class="hero-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container mx-auto text-center px-4">
+                <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">MADELEINE MULLER</h1>
+                <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">Welcome to my personal portfolio</p>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section - Now with F8DFDB background (swapped) -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-[#F8DFDB]">
         <div class="container mx-auto px-4">
             <h2 class="climate-crisis text-4xl text-center mb-12">PORTFOLIO</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio items would go here -->
-                <div class="portfolio-item rounded-lg p-6 shadow-lg bg-white">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
                     <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
                     <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
                 </div>
-                <div class="portfolio-item rounded-lg p-6 shadow-lg bg-white">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
                     <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
                     <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
                 </div>
-                <div class="portfolio-item rounded-lg p-6 shadow-lg bg-white">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
@@ -142,7 +154,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - Now with white background (swapped) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="climate-crisis text-4xl text-center mb-12">CONTACT ME</h2>
@@ -190,10 +202,10 @@
         </div>
     </section>
 
-    <!-- Footer - Now matching portfolio section color -->
+    <!-- Footer -->
     <footer class="bg-[#F8DFDB] py-8">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-[#40140F]">&copy; 2025 Madeleine Muller. All rights reserved.</p>
+            <p class="text-[#40140F]">&copy; 2023 Madeleine Muller. All rights reserved.</p>
         </div>
     </footer>
 
