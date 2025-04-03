@@ -50,7 +50,7 @@
     }
     /* Updated project card background color */
     .portfolio-item {
-      background-color: #FC221C;
+      background-color: #FFFFFF;
     }
   </style>
 </head>
@@ -168,7 +168,7 @@
   </section>
 
   <!-- Footer (updated background color) -->
-  <footer class="bg-[#FC221C] py-8">
+  <footer class="bg-white py-8">
     <div class="container mx-auto px-4 text-center">
       <p class="text-[#40140F]">&copy; 2023 Madeleine Muller. All rights reserved.</p>
     </div>
@@ -196,7 +196,6 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
