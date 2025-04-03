@@ -11,6 +11,7 @@
     <style>
         .climate-crisis {
             font-family: 'Climate Crisis', sans-serif;
+            color: #FC221C;
         }
         body {
             font-family: 'Archivo', sans-serif;
@@ -47,13 +48,16 @@
             transform: translateY(-3px);
             color: #FC221C;
         }
+        .portfolio-item {
+            background-color: #F8DFDB;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Navigation -->
     <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl climate-crisis text-[#40140F]">MADELEINE MULLER</a>
+            <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#" class="nav-link active text-[#40140F] font-medium">Home</a>
                 <a href="#portfolio" class="nav-link text-[#40140F] font-medium">Portfolio</a>
@@ -88,24 +92,24 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="climate-crisis text-4xl text-center text-[#40140F] mb-12">PORTFOLIO</h2>
+            <h2 class="climate-crisis text-4xl text-center mb-12">PORTFOLIO</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio items would go here -->
-                <div class="bg-[#F8DFDB] rounded-lg p-6 shadow-lg">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
                     <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
                     <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
                 </div>
-                <div class="bg-[#F8DFDB] rounded-lg p-6 shadow-lg">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
                     <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
                     <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
                 </div>
-                <div class="bg-[#F8DFDB] rounded-lg p-6 shadow-lg">
+                <div class="portfolio-item rounded-lg p-6 shadow-lg">
                     <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
                         <span class="text-gray-500">Project Coming Soon</span>
                     </div>
@@ -119,7 +123,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-[#F8DFDB]">
         <div class="container mx-auto px-4">
-            <h2 class="climate-crisis text-4xl text-center text-[#40140F] mb-12">CONTACT ME</h2>
+            <h2 class="climate-crisis text-4xl text-center mb-12">CONTACT ME</h2>
             <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
                 <div class="space-y-6">
                     <div class="flex items-center">
@@ -165,9 +169,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#40140F] text-white py-8">
+    <footer class="bg-white py-8">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2023 Madeleine Muller. All rights reserved.</p>
+            <p class="text-[#40140F]">&copy; 2023 Madeleine Muller. All rights reserved.</p>
         </div>
     </footer>
 
@@ -177,7 +181,6 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         });
-
         // Update active nav link
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
@@ -190,7 +193,6 @@
                 menu.classList.add('hidden');
             });
         });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -202,5 +204,5 @@
             });
         });
     </script>
-</body>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=mlmPenguin/portfolio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
