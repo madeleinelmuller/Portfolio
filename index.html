@@ -17,41 +17,11 @@
             font-family: 'Archivo', sans-serif;
             background-color: #FFFFFF;
         }
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
         .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url('Images/Maddie.png');
             background-size: cover;
             background-position: center;
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-color: #FC221C;
-            opacity: 0.2;
-            z-index: 1;
         }
         .nav-link {
             position: relative;
@@ -82,44 +52,33 @@
         .portfolio-item {
             background-color: #FFFFFF;
         }
+        .text-stroke {
+            -webkit-text-stroke: 1px white;
+            paint-order: stroke fill;
+        }
+        .blur-nav {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <!-- Navigation -->
-    <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
-            <div class="hidden md:flex space-x-8">
+    <!-- Navigation - Centered with blur -->
+    <nav class="fixed w-full top-0 z-50 blur-nav bg-transparent py-4 px-6">
+        <div class="container mx-auto flex justify-center items-center">
+            <div class="flex space-x-8">
                 <a href="#" class="nav-link active text-[#40140F] font-medium">Home</a>
                 <a href="#portfolio" class="nav-link text-[#40140F] font-medium">Portfolio</a>
                 <a href="#contact" class="nav-link text-[#40140F] font-medium">Contact</a>
             </div>
-            <button class="md:hidden text-[#40140F]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
         </div>
     </nav>
 
-    <!-- Mobile Menu (hidden by default) -->
-    <div class="md:hidden bg-[#F8DFDB] hidden" id="mobileMenu">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="block px-3 py-2 text-[#40140F] font-medium">Home</a>
-            <a href="#portfolio" class="block px-3 py-2 text-[#40140F] font-medium">Portfolio</a>
-            <a href="#contact" class="block px-3 py-2 text-[#40140F] font-medium">Contact</a>
-        </div>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero-section flex-grow">
-        <div class="hero-image"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="container mx-auto text-center px-4">
-                <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">MADELEINE MULLER</h1>
-                <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">Welcome to my personal portfolio</p>
-            </div>
+    <section class="hero-image flex-grow flex items-center justify-center relative pt-16">
+        <div class="container mx-auto text-center relative z-10 px-4">
+            <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6 text-stroke">MADELEINE MULLER</h1>
+            <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto text-stroke">Welcome to my personal portfolio</p>
         </div>
     </section>
 
@@ -210,23 +169,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('button').addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        });
-        // Update active nav link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Hide mobile menu after selection
-                const menu = document.getElementById('mobileMenu');
-                menu.classList.add('hidden');
-            });
-        });
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -237,6 +179,15 @@
                 });
             });
         });
+        
+        // Update active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     </script>
-</body>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=mlmPenguin/portfolio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
