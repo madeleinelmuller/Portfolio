@@ -18,7 +18,6 @@
       background-color: #FFFFFF;
     }
     .hero-image {
-      background-image: url('Images/Maddie.png');
       background-size: cover;
       background-position: center;
     }
@@ -82,12 +81,15 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero-image h-screen flex items-center justify-center relative">
-    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-    <div class="container mx-auto text-center relative z-10 px-4">
-      <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6">MADELEINE MULLER</h1>
-      <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Welcome to my personal portfolio</p>
+  <section class="hero-image flex-grow flex items-center justify-center relative">
+    <div class="container mx-auto relative z-0 -mt-8 px-4">
+      <h1 class="flex justify-between items-center text-5xl md:text-7xl lg:text-8xl climate-crisis mb-6">
+        <span>MADELEINE</span>
+        <span>MULLER</span>
+      </h1>
+      <p class="text-xl md:text-2xl climate-crisis max-w-2xl mx-auto">Welcome to my personal portfolio</p>
     </div>
+    <img src="Images/Maddie.png" alt="Hero Background" class="absolute top-0 left-0 w-full h-full object-cover opacity-70 z-20">
   </section>
 
   <!-- Portfolio Section -->
