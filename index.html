@@ -11,7 +11,7 @@
   <style>
     .climate-crisis {
       font-family: 'Climate Crisis', sans-serif;
-      color: #FC221C; /* Bright red color */
+      color: #FC221C;
     }
     body {
       font-family: 'Archivo', sans-serif;
@@ -21,8 +21,6 @@
       background-image: url('Images/Maddie.png');
       background-size: cover;
       background-position: center;
-      /* Ensure the background image itself is behind the text content by default */
-      z-index: 0;
     }
     .nav-link {
       position: relative;
@@ -54,32 +52,11 @@
     .portfolio-item {
       background-color: #FFFFFF;
     }
-
-    /* Style for hero text container to allow image overlap */
-    .hero-text-container {
-        /* We will position the text container,
-           and the background image is on the parent section */
-        position: relative;
-        z-index: 10; /* Text is above the default background */
-    }
-
-    /* This part is conceptual for the overlap effect.
-       If 'Images/Maddie.png' has transparency and the subject
-       is meant to overlap, you'd typically need another image layer
-       or a more complex setup.
-
-       For now, we'll interpret "background picture go OVER the text"
-       as removing the overlay and letting the original background show
-       prominently behind the adjusted text. The z-index setup ensures
-       text is technically above the background div, but without the overlay,
-       the background IS the visible layer behind it.
-    */
-
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Navigation -->
-  <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md relative z-20"> {/* Added z-20 to ensure nav is above hero */}
+  <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
       <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
       <div class="hidden md:flex space-x-8">
@@ -96,7 +73,7 @@
   </nav>
 
   <!-- Mobile Menu (hidden by default) -->
-  <div class="md:hidden bg-[#F8DFDB] hidden relative z-20" id="mobileMenu"> {/* Added z-20 */}
+  <div class="md:hidden bg-[#F8DFDB] hidden" id="mobileMenu">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <a href="#" class="block px-3 py-2 text-[#40140F] font-medium">Home</a>
       <a href="#portfolio" class="block px-3 py-2 text-[#40140F] font-medium">Portfolio</a>
@@ -106,27 +83,11 @@
 
   <!-- Hero Section -->
   <section class="hero-image h-screen flex items-center justify-center relative">
-    {/* Removed the dark overlay div */}
-    {/* The background image is now applied directly to this section */}
-
-    {/* Container for text, positioned relatively and with z-index */}
-    <div class="hero-text-container container mx-auto text-center px-4 transform -translate-y-8 md:-translate-y-12"> {/* Moved text slightly higher */}
-        {/* Updated H1: flex container for split words, climate-crisis for red color */}
-      <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl mb-6 flex flex-col sm:flex-row justify-center items-center sm:space-x-6">
-        {/* Used translate to shift words slightly */}
-        <span class="block transform sm:-translate-x-3">MADELEINE</span>
-        <span class="block transform sm:translate-x-3">MULLER</span>
-      </h1>
-      {/* Updated paragraph text color */}
-      <p class="text-xl md:text-2xl text-[#FC221C] max-w-2xl mx-auto">Welcome to my personal portfolio</p>
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="container mx-auto text-center relative z-10 px-4">
+      <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6">MADELEINE MULLER</h1>
+      <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Welcome to my personal portfolio</p>
     </div>
-     {/* Note: The request "have the background picture go OVER the text" is complex.
-         Typically, this requires image editing (making parts transparent) and layering
-         an <img> element with a higher z-index OVER the text.
-         Without modifying the image asset or adding extra elements, the background
-         will remain *behind* the text content as is standard.
-         Removing the overlay makes the background *fully visible* behind the text.
-     */}
   </section>
 
   <!-- Portfolio Section -->
@@ -135,9 +96,9 @@
       <h2 class="climate-crisis text-4xl text-center mb-12">PORTFOLIO</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <a href="https://docs.google.com/document/d/e/2PACX-1vRebiCzfxS6fduDy1RYfy05X3qARwmdpiMA-N3nHrCqIau7tQ3ooikuePfcwqf5KcTIXQENQpHZYQa4/pub" target="_blank">
-          <div class="portfolio-item rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="h-48 rounded-md mb-4 flex items-center justify-center overflow-hidden">
-              <img src="Images/phone-use-in-schools-preview.png" alt="Phone Use in Schools Preview" class="w-full h-full object-cover rounded-md transition-transform duration-300 hover:scale-105">
+          <div class="portfolio-item rounded-lg p-6 shadow-lg">
+            <div class="h-48 rounded-md mb-4 flex items-center justify-center">
+              <img src="Images/phone-use-in-schools-preview.png" alt="Phone Use in Schools Preview" class="w-full h-full object-cover rounded-md">
             </div>
             <h3 class="text-xl font-bold text-[#40140F]">Phone Use in Schools</h3>
             <p class="text-gray-600 mt-2">This essay provides a compelling exploration of phone use in schools, blending insightful analysis with articulate reflections. It examines the balance between technological advantages and the challenges it presents, offering thoughtful perspectives on integrating mobile devices into modern educational environments.</p>
@@ -193,8 +154,7 @@
           <div class="flex items-center">
             <div class="contact-icon text-2xl text-[#40140F] mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {/* Using a generic social icon, replace if specific ones are needed */}
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
               </svg>
             </div>
             <div>
@@ -211,102 +171,38 @@
   <!-- Footer (updated background color) -->
   <footer class="bg-white py-8">
     <div class="container mx-auto px-4 text-center">
-      <p class="text-[#40140F]">© 2024 Madeleine Muller. All rights reserved.</p> {/* Updated year */}
+      <p class="text-[#40140F]">&copy; 2023 Madeleine Muller. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     // Mobile menu toggle
-    const menuButton = document.querySelector('nav button.md:hidden');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
+    document.querySelector('button').addEventListener('click', function() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
     });
-
-    // Update active nav link & close mobile menu
+    // Update active nav link
     const navLinks = document.querySelectorAll('.nav-link');
-    const mobileNavLinks = document.querySelectorAll('#mobileMenu a');
-
-    function setActiveLink(clickedLink) {
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
         navLinks.forEach(l => l.classList.remove('active'));
-        // Find the corresponding desktop link if a mobile link was clicked
-        const desktopLink = Array.from(navLinks).find(l => l.getAttribute('href') === clickedLink.getAttribute('href'));
-        if (desktopLink) {
-            desktopLink.classList.add('active');
-        } else {
-            // If it was a desktop link click directly
-             clickedLink.classList.add('active');
-        }
+        this.classList.add('active');
 
         // Hide mobile menu after selection
-        mobileMenu.classList.add('hidden');
-    }
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-         // Smooth scroll handles prevention if needed
-        // setActiveLink(this); // Set active handled by scrollspy or smooth scroll end
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.add('hidden');
       });
     });
-     mobileNavLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        // Smooth scroll handles prevention if needed
-        setActiveLink(this); // Set active immediately for mobile clicks
-      });
-    });
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        // Ensure it's a real anchor link, not just "#"
-        if (href.length > 1) {
-            e.preventDefault();
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-                 // Set active link after scroll (or immediately for mobile)
-                setActiveLink(this);
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        } else if (href === "#") {
-             e.preventDefault(); // Prevent jumping to top for "#" link
-             window.scrollTo({ top: 0, behavior: 'smooth' });
-             setActiveLink(this); // Activate home link
-        }
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
-
-     // Optional: Update active link on scroll (Scrollspy)
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Adjust trigger point (e.g., 150px from top)
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        // Add active class to the corresponding nav link
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-         // Handle edge case for top of page (Home)
-        if (pageYOffset < window.innerHeight * 0.6 && !current) { // If near top and no section is active
-             navLinks.forEach(l => l.classList.remove('active'));
-             const homeLink = document.querySelector('.nav-link[href="#"]');
-             if (homeLink) homeLink.classList.add('active');
-        }
-    });
-
   </script>
-  {/* Removed the DeepSite watermark paragraph */}
+  <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=mlmPenguin/portfolio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p>
 </body>
 </html>
