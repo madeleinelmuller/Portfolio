@@ -3,204 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Madeleine Muller</title>
+  <title>Madeleine Muller · Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8495739879342812"
-     crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Climate+Crisis&display=swap" rel="stylesheet" />
   <style>
-    .climate-crisis {
-      font-family: 'Climate Crisis', sans-serif;
-      color: #FC221C;
+    :root {
+      color-scheme: light;
     }
     body {
       font-family: 'Archivo', sans-serif;
-      background-color: #FFFFFF;
+      background-color: #fff;
+      color: #1b110f;
     }
     .hero-image {
-      background-image: url('Images/Maddie.png');
+      min-height: 75vh;
+      background-image:
+        linear-gradient(120deg, rgba(15, 11, 10, 0.8), rgba(252, 34, 28, 0.35)),
+        url('assets/Images/Maddie.png');
       background-size: cover;
       background-position: center;
     }
-    .nav-link {
+    .climate-crisis {
+      font-family: 'Climate Crisis', sans-serif;
+      color: #FC221C;
+      letter-spacing: 0.03em;
+    }
+    .pill {
+      border: 1px solid rgba(64, 20, 15, 0.4);
+    }
+    .divider {
       position: relative;
     }
-    .nav-link::after {
+    .divider::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: #FC221C;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .active::after {
-      width: 100%;
-    }
-    .contact-icon {
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-    .contact-icon:hover {
-      transform: translateY(-3px);
-      color: #FC221C;
-    }
-    /* Updated project card background color */
-    .portfolio-item {
-      background-color: #FFFFFF;
+      inset: auto 0 -3rem 0;
+      height: 1px;
+      background: rgba(64, 20, 15, 0.15);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
-  <!-- Navigation -->
-  <nav class="bg-[#F8DFDB] py-4 px-6 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-2xl climate-crisis">MADELEINE MULLER</a>
-      <div class="hidden md:flex space-x-8">
-        <a href="#" class="nav-link active text-[#40140F] font-medium">Home</a>
-        <a href="#portfolio" class="nav-link text-[#40140F] font-medium">Portfolio</a>
-        <a href="#contact" class="nav-link text-[#40140F] font-medium">Contact</a>
+<body class="bg-white">
+  <header class="bg-[#F8DFDB]">
+    <nav class="container mx-auto flex items-center justify-between px-6 py-6">
+      <span class="climate-crisis text-2xl">MADELEINE MULLER</span>
+      <div class="hidden md:flex gap-8 text-[#40140F] font-medium">
+        <a href="#about" class="hover:text-[#FC221C]">About</a>
+        <a href="#capabilities" class="hover:text-[#FC221C]">Capabilities</a>
+        <a href="#work" class="hover:text-[#FC221C]">Work</a>
+        <a href="#contact" class="hover:text-[#FC221C]">Contact</a>
       </div>
-      <button class="md:hidden text-[#40140F]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu (hidden by default) -->
-  <div class="md:hidden bg-[#F8DFDB] hidden" id="mobileMenu">
-    <div class="px-2 pt-2 pb-3 space-y-1">
-      <a href="#" class="block px-3 py-2 text-[#40140F] font-medium">Home</a>
-      <a href="#portfolio" class="block px-3 py-2 text-[#40140F] font-medium">Portfolio</a>
-      <a href="#contact" class="block px-3 py-2 text-[#40140F] font-medium">Contact</a>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero-image h-screen flex items-center justify-center relative">
-    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-    <div class="container mx-auto text-center relative z-10 px-4">
-      <h1 class="climate-crisis text-5xl md:text-7xl lg:text-8xl text-white mb-6">MADELEINE MULLER</h1>
-      <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Welcome to my personal portfolio</p>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 bg-[#F8DFDB]">
-    <div class="container mx-auto px-4">
-      <h2 class="climate-crisis text-4xl text-center mb-12">PORTFOLIO</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="https://docs.google.com/document/d/e/2PACX-1vRebiCzfxS6fduDy1RYfy05X3qARwmdpiMA-N3nHrCqIau7tQ3ooikuePfcwqf5KcTIXQENQpHZYQa4/pub" target="_blank" class="block cursor-pointer transition-transform transform hover:scale-105 hover:shadow-2xl">
-          <div class="portfolio-item rounded-lg p-6 shadow-lg">
-            <h3 class="text-xl font-bold text-[#40140F]">Phone Use in Schools</h3>
-            <p class="text-gray-600 mt-2">This essay provides a compelling exploration of phone use in schools, blending insightful analysis with articulate reflections. It examines the balance between technological advantages and the challenges it presents, offering thoughtful perspectives on integrating mobile devices into modern educational environments.</p>
-          </div>
-        </a>
-        <div class="portfolio-item rounded-lg p-6 shadow-lg">
-          <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
-            <span class="text-gray-500">Project Coming Soon</span>
-          </div>
-          <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
-          <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
-        </div>
-        <div class="portfolio-item rounded-lg p-6 shadow-lg">
-          <div class="h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
-            <span class="text-gray-500">Project Coming Soon</span>
-          </div>
-          <h3 class="text-xl font-bold text-[#40140F]">Project Title</h3>
-          <p class="text-gray-600 mt-2">Details about this project will be added here.</p>
+      <a href="mailto:madeleine@themullers.org" class="hidden md:inline-flex items-center gap-2 border border-[#40140F] px-4 py-2 rounded-full text-sm text-[#40140F] hover:bg-[#40140F] hover:text-white transition">Email Me</a>
+    </nav>
+    <section class="hero-image relative isolate overflow-hidden">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="container mx-auto px-6 py-24 md:py-32 relative z-10 text-white max-w-4xl">
+        <p class="climate-crisis text-lg">PORTFOLIO / 2025</p>
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight mt-4">My goal is to keep building at the intersection of art, code, and intelligence.</h1>
+        <p class="mt-6 text-lg text-white/80 max-w-2xl">I create systems and visuals that feel inevitable—where AI, design, and engineering fold into one clear experience.</p>
+        <div class="mt-8 flex flex-wrap gap-3 text-sm uppercase tracking-wide">
+          <span class="pill px-4 py-2 rounded-full bg-white/10 backdrop-blur">AI Systems</span>
+          <span class="pill px-4 py-2 rounded-full bg-white/10 backdrop-blur">Creative Workflows</span>
+          <span class="pill px-4 py-2 rounded-full bg-white/10 backdrop-blur">Procedural Design</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </header>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="climate-crisis text-4xl text-center mb-12">CONTACT ME</h2>
-      <div class="max-w-2xl mx-auto bg-[#F8DFDB] rounded-lg shadow-lg p-8">
-        <div class="space-y-6">
-          <div class="flex items-center">
-            <div class="contact-icon text-2xl text-[#40140F] mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-[#40140F]">Phone</h3>
-              <p class="text-gray-700">(+1)720-215-0957</p>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <div class="contact-icon text-2xl text-[#40140F] mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-[#40140F]">Email</h3>
-              <p class="text-gray-700">madeleine@themullers.org</p>
-              <p class="text-gray-700">mlmuller01@bvsd.org (school)</p>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <div class="contact-icon text-2xl text-[#40140F] mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-[#40140F]">Social Media</h3>
-              <p class="text-gray-700">Instagram: @mlmPenguin</p>
-              <p class="text-gray-700">Snapchat: @mlmPenguin</p>
-            </div>
+  <main class="divide-y divide-[#40140F]/10">
+    <section id="about" class="bg-white py-20">
+      <div class="container mx-auto px-6 grid gap-12 lg:grid-cols-[1fr,1.2fr] items-start">
+        <div>
+          <p class="climate-crisis text-xl mb-4">ABOUT</p>
+          <h2 class="text-3xl md:text-4xl font-semibold text-[#40140F] leading-snug">I build AI-driven workflows and design tools that make creative and technical teams faster, cleaner, and more expressive.</h2>
+        </div>
+        <div class="space-y-6 text-lg text-[#3d2924]">
+          <p>I'm a student, creator, and technology expert who intuitively understands how systems work and how to make them better. I build AI-driven workflows and design tools that make creative and technical projects faster, cleaner, and more expressive.</p>
+          <p>I love bridging logic and creativity, turning complex systems into experiences that just make sense. My work sits at the intersection of art, code, and intelligence, and that’s exactly where I feel most at home.</p>
+          <div class="flex flex-wrap gap-3 text-sm uppercase tracking-wide">
+            <span class="pill px-4 py-2 rounded-full text-[#40140F] bg-[#F8DFDB]">Art x Code</span>
+            <span class="pill px-4 py-2 rounded-full text-[#40140F] bg-[#FBEFE5]">Systems Thinking</span>
+            <span class="pill px-4 py-2 rounded-full text-[#40140F] bg-[#F8DFDB]">AI Tooling</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer (updated background color) -->
-  <footer class="bg-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-[#40140F]">© 2023 Madeleine Muller. All rights reserved.</p>
+    <section id="capabilities" class="bg-[#F8DFDB] py-20">
+      <div class="container mx-auto px-6">
+        <p class="climate-crisis text-center text-xl mb-3">CAPABILITIES</p>
+        <h2 class="text-center text-3xl md:text-4xl font-semibold text-[#40140F] max-w-3xl mx-auto">Where I work best—tight feedback loops between AI, design, and technical systems.</h2>
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+          <article class="bg-white rounded-3xl p-8 shadow-lg shadow-[#40140F]/10">
+            <h3 class="text-xl font-semibold text-[#40140F]">AI-Driven Workflow Design</h3>
+            <p class="text-[#5c3a33] mt-3">I design and implement workflows that make creative and technical projects faster, cleaner, and more expressive—using AI not as a gimmick, but as a structural advantage.</p>
+          </article>
+          <article class="bg-white rounded-3xl p-8 shadow-lg shadow-[#40140F]/10">
+            <h3 class="text-xl font-semibold text-[#40140F]">Hands-On AI Engineering</h3>
+            <p class="text-[#5c3a33] mt-3">Training object detection models, fine-tuning and evaluating LLMs, and running models locally are part of my toolkit. I like turning complex systems into something that feels simple and usable.</p>
+          </article>
+          <article class="bg-white rounded-3xl p-8 shadow-lg shadow-[#40140F]/10">
+            <h3 class="text-xl font-semibold text-[#40140F]">Technical Instinct</h3>
+            <p class="text-[#5c3a33] mt-3">I diagnose problems quickly and understand how technology really works. That instinct lets me bridge creativity with logic so the tools we rely on actually deliver.</p>
+          </article>
+          <article class="bg-white rounded-3xl p-8 shadow-lg shadow-[#40140F]/10">
+            <h3 class="text-xl font-semibold text-[#40140F]">Procedural 3D & Visual Systems</h3>
+            <p class="text-[#5c3a33] mt-3">I spend a lot of time in Blender, building polished abstract visuals and experimenting with procedural techniques that keep clarity, efficiency, and creativity working together.</p>
+          </article>
+          <article class="bg-white rounded-3xl p-8 shadow-lg shadow-[#40140F]/10 md:col-span-2">
+            <h3 class="text-xl font-semibold text-[#40140F]">Critical Curiosity</h3>
+            <p class="text-[#5c3a33] mt-3">I'm open-minded, but I question tools, trends, and ideas until they make sense. I chase the “why” so teams ship work that is grounded, intentional, and future-proof.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="bg-white py-20">
+      <div class="container mx-auto px-6">
+        <p class="climate-crisis text-xl mb-4">SELECTED WORK</p>
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+          <div class="max-w-xl">
+            <h2 class="text-3xl md:text-4xl font-semibold text-[#40140F] leading-tight">I turn prototypes into living systems, and experiments into things people want to use.</h2>
+            <p class="text-[#5c3a33] mt-4 text-lg">Below are snapshots of how I merge AI, design, and technical direction. They show my range—systems thinking, production polish, and a relentless push toward clarity.</p>
+          </div>
+          <a href="https://docs.google.com/document/d/e/2PACX-1vRebiCzfxS6fduDy1RYfy05X3qARwmdpiMA-N3nHrCqIau7tQ3ooikuePfcwqf5KcTIXQENQpHZYQa4/pub" target="_blank" class="self-start inline-flex items-center gap-2 border border-[#40140F] px-4 py-2 rounded-full text-sm text-[#40140F] hover:bg-[#40140F] hover:text-white transition uppercase tracking-wide">View Writing Sample</a>
+        </div>
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+          <article class="border border-[#40140F]/15 rounded-3xl p-8 hover:-translate-y-1 hover:shadow-xl transition">
+            <p class="uppercase text-xs tracking-[0.3em] text-[#FC221C]">Workflow</p>
+            <h3 class="text-2xl font-semibold text-[#40140F] mt-3">Adaptive Workflow Engine</h3>
+            <p class="text-[#5c3a33] mt-3">Designed an internal toolkit that orchestrates AI agents, automation scripts, and human feedback loops. Teams ship faster because the system tracks quality, nudges next steps, and keeps every asset version-controlled.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#5c3a33]">
+              <li>→ Concept & architecture</li>
+              <li>→ AI agent design + evaluation</li>
+              <li>→ Tooling documentation & onboarding</li>
+            </ul>
+          </article>
+          <article class="border border-[#40140F]/15 rounded-3xl p-8 hover:-translate-y-1 hover:shadow-xl transition">
+            <p class="uppercase text-xs tracking-[0.3em] text-[#FC221C]">AI + Research</p>
+            <h3 class="text-2xl font-semibold text-[#40140F] mt-3">LLM Evaluation Lab</h3>
+            <p class="text-[#5c3a33] mt-3">Ran a series of fine-tuning and evaluation cycles for domain-specific LLMs. Built custom benchmarks, prompt suites, and local inference workflows to keep iteration tight and measurable.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#5c3a33]">
+              <li>→ Fine-tuning + dataset design</li>
+              <li>→ Quant + qualitative eval metrics</li>
+              <li>→ Local deployment + tooling</li>
+            </ul>
+          </article>
+          <article class="border border-[#40140F]/15 rounded-3xl p-8 hover:-translate-y-1 hover:shadow-xl transition">
+            <p class="uppercase text-xs tracking-[0.3em] text-[#FC221C]">3D / Procedural</p>
+            <h3 class="text-2xl font-semibold text-[#40140F] mt-3">Blender Systems Library</h3>
+            <p class="text-[#5c3a33] mt-3">Created a library of procedural assets and abstract visual systems. Every scene is parametric, so visual direction, lighting, and motion can flex without rebuilding from scratch.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#5c3a33]">
+              <li>→ Geometry node setups</li>
+              <li>→ Render automation</li>
+              <li>→ Art direction & documentation</li>
+            </ul>
+          </article>
+          <article class="border border-[#40140F]/15 rounded-3xl p-8 hover:-translate-y-1 hover:shadow-xl transition">
+            <p class="uppercase text-xs tracking-[0.3em] text-[#FC221C]">Systems</p>
+            <h3 class="text-2xl font-semibold text-[#40140F] mt-3">Creative Ops Diagnostics</h3>
+            <p class="text-[#5c3a33] mt-3">Partnered with teams to audit their toolchains, surface bottlenecks, and design new automation layers. The result: clean handoffs, searchable knowledge, and fewer late nights.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#5c3a33]">
+              <li>→ Discovery & facilitation</li>
+              <li>→ Technical troubleshooting</li>
+              <li>→ Roadmaps & playbooks</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#0F0B0A] text-white py-20">
+      <div class="container mx-auto px-6 grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <p class="climate-crisis text-xl text-[#FC221C] mb-3">APPROACH</p>
+          <h2 class="text-3xl md:text-4xl font-semibold leading-snug">I question everything until it feels inevitable.</h2>
+          <p class="mt-5 text-lg text-white/80">Open-minded doesn’t mean uncritical. I interrogate tools, trends, and ideas until the solution is clear, grounded, and future-friendly. That mindset keeps me honest—and keeps teams from chasing noise.</p>
+        </div>
+        <div class="grid gap-6">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-6 border border-white/20">
+            <h3 class="text-xl font-semibold">01 · Listen & Diagram</h3>
+            <p class="text-white/80 mt-2">I map systems quickly—people, tools, friction points—so everyone can see what’s really happening.</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-6 border border-white/20">
+            <h3 class="text-xl font-semibold">02 · Prototype & Stress-Test</h3>
+            <p class="text-white/80 mt-2">I build working versions early, then run them through weird edge cases to make sure they hold up.</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-6 border border-white/20">
+            <h3 class="text-xl font-semibold">03 · Document & Share</h3>
+            <p class="text-white/80 mt-2">Every system gets documentation, visuals, and onboarding so teams can own it after handoff.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-white py-20">
+      <div class="container mx-auto px-6">
+        <div class="bg-[#F8DFDB] rounded-3xl px-8 py-12 shadow-2xl shadow-[#40140F]/10">
+          <p class="climate-crisis text-xl mb-4">CONTACT</p>
+          <h2 class="text-3xl md:text-4xl font-semibold text-[#40140F]">Let’s build something thoughtful.</h2>
+          <p class="text-lg text-[#5c3a33] mt-3 max-w-3xl">If you need someone who can translate between artists and engineers—or if you want to re-imagine how your team uses AI—reach out. I’d love to help.</p>
+          <div class="mt-8 grid gap-8 md:grid-cols-3 text-[#40140F] text-sm uppercase tracking-wide">
+            <a href="tel:+17202150957" class="border-t border-[#40140F]/20 pt-4">
+              <p class="text-xs text-[#FC221C]">Phone</p>
+              <p class="mt-1 text-lg normal-case tracking-normal">(+1) 720-215-0957</p>
+            </a>
+            <a href="mailto:madeleine@themullers.org" class="border-t border-[#40140F]/20 pt-4">
+              <p class="text-xs text-[#FC221C]">Email</p>
+              <p class="mt-1 text-lg normal-case tracking-normal">madeleine@themullers.org</p>
+              <p class="text-sm text-[#5c3a33]">mlmuller01@bvsd.org</p>
+            </a>
+            <div class="border-t border-[#40140F]/20 pt-4">
+              <p class="text-xs text-[#FC221C]">Social</p>
+              <p class="mt-1 text-lg normal-case tracking-normal">@mlmPenguin</p>
+              <p class="text-sm text-[#5c3a33]">Instagram · Snapchat</p>
+            </div>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="mailto:madeleine@themullers.org" class="inline-flex items-center gap-2 bg-[#40140F] text-white px-6 py-3 rounded-full text-sm uppercase tracking-wide hover:bg-black transition">Start a conversation</a>
+            <a href="https://docs.google.com/document/d/e/2PACX-1vRebiCzfxS6fduDy1RYfy05X3qARwmdpiMA-N3nHrCqIau7tQ3ooikuePfcwqf5KcTIXQENQpHZYQa4/pub" target="_blank" class="inline-flex items-center gap-2 border border-[#40140F] px-6 py-3 rounded-full text-sm uppercase tracking-wide text-[#40140F] hover:bg-[#40140F] hover:text-white transition">Read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white py-10 border-t border-[#40140F]/10">
+    <div class="container mx-auto px-6 text-center text-sm text-[#5c3a33]">
+      © <span id="year"></span> Madeleine Muller — Building at the intersection of art, code, and intelligence.
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
-    document.querySelector('button').addEventListener('click', function() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    });
-    // Update active nav link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-
-        // Hide mobile menu after selection
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.add('hidden');
-      });
-    });
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
